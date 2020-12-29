@@ -1,6 +1,5 @@
 import { Component } from "react";
 import "./App.css";
-import "./components/card-list.components.jsx"
 import { CardList } from "./components/card-list.components.jsx";
 
 class App extends Component {
@@ -20,20 +19,11 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        {/* <h1>{ this.props.component}</h1> */}
-        {/* <h1>{ this.props.name}</h1> */}
-        <CardList name="Mohan Kumar">
+        <CardList>
         {this.state.monsters.map((monster) => (
           <h1 key={monster.id}>{monster.name}</h1>
         ))}
         </CardList>
-        {/* <button
-          onClick={() =>
-            this.setState({ monsters: [{ name: "Banshee", id: "asdf" }] })
-          }
-        >
-          Change Monster
-        </button> */}
       </div>
     );
   }
