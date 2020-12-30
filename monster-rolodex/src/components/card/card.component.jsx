@@ -7,7 +7,7 @@ export const Card = ({monster}) => {
     <div className="card-container">
       <img
         alt="monsters"
-        src={`https://robohash.org/${monster.id}?set=set2&size=220x220`}
+        src={`https://robohash.org/${monster.id}?set=set2&size=250x250`}
       />
       <h2 key={monster.id}>{monster.name}</h2>
       <p>{monster.email}</p>

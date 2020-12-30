@@ -21,23 +21,25 @@ class App extends Component {
       .then((users) => this.setState({ monsters: users }))
       .catch(console.error);
   }
+  handleChange = (e) => this.setState({ searchField: e.target.value.toLowerCase() });
+    
   render() {
-    const { monsters, searchField } = this.state;
-    const filteredMonsters = monsters.filter((monster) =>
-      monster.name.toLowerCase().includes(searchField)
-    );
+  const { monsters, searchField } = this.state;
+  const filteredMonsters = monsters.filter((monster) =>
+    monster.name.toLowerCase().includes(searchField)
+  );
 
     return (
+    
       <div className="app">
-        <SearchBox
-          placeholder="Search Monsters"
-          handleChange={(e) =>
-            this.setState({ searchField: e.target.value.toLowerCase() })
-          }
-        />
-        <CardList monsters={filteredMonsters} />
-      </div>
-    );
+        <h1>Monsters Rolodex</h1>
+      <SearchBox
+        placeholder="Search Monsters"
+        handleChange={this.handleChange}
+      />
+      <CardList monsters={filteredMonsters} />
+    </div>
+  );
   }
 }
 
