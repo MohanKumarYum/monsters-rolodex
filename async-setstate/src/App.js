@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   handleClick = () =>
-    this.setState({ meaningOflife: this.state.meaningOflife + 1 });
+    this.setState({ meaningOflife: this.state.meaningOflife + 1 }, () => console.log(this.state.meaningOflife));
 
   render() {
     return (
