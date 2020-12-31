@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pure React</title>
+  </head>
+  <body>
+    <div id="root"><h1>Not Rendered</h1></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@17/umd/react.production.min.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"
+    ></script>
+    <script>
+      const Person = (props) => {
+        return React.createElement("div", {}, [
+          React.createElement("h1", {}, props.name),
+          React.createElement("p", {}, props.occupation),
+          React.createElement("p", {}, props.country),
+        ]);
+      };
+
+      class App extends React.Component {
+        render() {
+          return React.createElement(
+            "div",
+            {},
+            React.createElement("h1", {}, [
+              "Hello I am Pure React",
+              React.createElement(Person, {
+                name: "Mohan",
+                occupation: "Developer",
+                country: "India",
+              }),
+              React.createElement(Person, {
+                name: "Thanuj",
+                occupation: "Student",
+                country: "Australia",
+              }),
+              React.createElement(Person, {
+                name: "Shifali",
+                occupation: "Student",
+                country: "Australia",
+              }),
+            ])
+          );
+        }
+      }
+
+      //   const App = () =>
+      //     React.createElement(
+      //       "div",
+      //       {},
+      //       React.createElement("h1", {}, [
+      //         "Hello I am Pure React",
+      //         React.createElement(Person, {
+      //           name: "Mohan",
+      //           occupation: "Developer",
+      //           country: "India",
+      //         }),
+      //         React.createElement(Person, {
+      //           name: "Thanuj",
+      //           occupation: "Student",
+      //           country: "Australia",
+      //         }),
+      //         React.createElement(Person, {
+      //           name: "Shifali",
+      //           occupation: "Student",
+      //           country: "Australia",
+      //         }),
+      //       ])
+      //     );
+
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
