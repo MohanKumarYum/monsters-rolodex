@@ -24,29 +24,56 @@
         ]);
       };
 
-      const App = () =>
-        React.createElement(
-          "div",
-          {},
-          React.createElement("h1", {}, [
-            "Hello I am Pure React",
-            React.createElement(Person, {
-              name: "Mohan",
-              occupation: "Developer",
-              country: "India",
-            }),
-            React.createElement(Person, {
-              name: "Thanuj",
-              occupation: "Student",
-              country: "Australia",
-            }),
-            React.createElement(Person, {
-              name: "Shifali",
-              occupation: "Student",
-              country: "Australia",
-            }),
-          ])
-        );
+      class App extends React.Component {
+        render() {
+          return React.createElement(
+            "div",
+            {},
+            React.createElement("h1", {}, [
+              "Hello I am Pure React",
+              React.createElement(Person, {
+                name: "Mohan",
+                occupation: "Developer",
+                country: "India",
+              }),
+              React.createElement(Person, {
+                name: "Thanuj",
+                occupation: "Student",
+                country: "Australia",
+              }),
+              React.createElement(Person, {
+                name: "Shifali",
+                occupation: "Student",
+                country: "Australia",
+              }),
+            ])
+          );
+        }
+      }
+
+      //   const App = () =>
+      //     React.createElement(
+      //       "div",
+      //       {},
+      //       React.createElement("h1", {}, [
+      //         "Hello I am Pure React",
+      //         React.createElement(Person, {
+      //           name: "Mohan",
+      //           occupation: "Developer",
+      //           country: "India",
+      //         }),
+      //         React.createElement(Person, {
+      //           name: "Thanuj",
+      //           occupation: "Student",
+      //           country: "Australia",
+      //         }),
+      //         React.createElement(Person, {
+      //           name: "Shifali",
+      //           occupation: "Student",
+      //           country: "Australia",
+      //         }),
+      //       ])
+      //     );
 
       ReactDOM.render(
         React.createElement(App),
