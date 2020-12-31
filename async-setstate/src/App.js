@@ -2,16 +2,16 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      meaningOflife: 47 + this.props.increment,
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     meaningOflife: 47 + this.props.increment,
+  //   };
+  // }
 
-  // state = {
-  //   meaningOflife: 47 + this.props.increment,
-  // };
+  state = {
+    meaningOflife: 47 + this.props.increment,
+  };
 
   handleClick = () =>
     this.setState(
